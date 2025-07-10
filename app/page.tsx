@@ -1,17 +1,21 @@
-import { Encryption } from "@/components/main/encryption";
 import { Hero } from "@/components/main/hero";
-import { Projects } from "@/components/main/projects";
 import { Skills } from "@/components/main/skills";
-import { ScanSection } from "@/components/main/scan";
+import {  SecurityDashboardSection } from "@/components/main/scan";
+import { FAQSection } from "@/components/main/faq";
+import { HowItWorksSection } from "@/components/main/hiw";
+import { FeaturesSection } from "@/components/main/features";
+
 
 export default function Home() {
   return (
     <main className="h-full w-full">
       <div className="flex flex-col gap-20">
         <Hero />
-        <ScanSection/>
+        <SecurityDashboardSection/>
+        <HowItWorksSection/>
+        <FeaturesSection/>
         <Skills />
-        <Encryption />
+        <FAQSection/>    
       </div>
     </main>
   );

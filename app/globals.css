@@ -74,3 +74,24 @@ html {
     transform: rotate(420deg);
   }
 }
+
+.bhole {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 720px) {
+  .bhole {
+    transform: rotate(0deg);
+    background-color: transparent;
+    scale: 1;
+  }
+  #label1{
+    display: none;
+  }
+  #label2{
+    display: none;
+  }
+  .midbar{
+    display: none;
+  }
+}

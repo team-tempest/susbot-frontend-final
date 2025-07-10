@@ -36,6 +36,7 @@ export const HeroBackgroundLabels = () => {
         animate={{ y: [0, -12, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className={`absolute top-24 right-16 ${labelStyle}`}
+        id="label1"
       >
         <div className="flex items-center gap-2">
           <ShieldCheckIcon className="h-6 w-6 text-purple-400" />
@@ -54,6 +55,7 @@ export const HeroBackgroundLabels = () => {
         animate={{ y: [0, 12, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         className={`absolute bottom-24 left-16 ${labelStyle}`}
+         id="label2"
       >
         <div className="flex items-center gap-2">
           <CpuChipIcon className="h-6 w-6 text-cyan-400" />
