@@ -37,7 +37,7 @@ export const FloatingNavbar = () => {
     >
       <div className="flex items-center justify-between px-6 py-3 backdrop-blur-md bg-[#03001427] border border-white/20 shadow-lg rounded-full w-full">
         {/* Logo */}
-        <Link href="/">
+        <Link href="/" className="flex flex-row justify-center items-center gap-2">
           <Image
             src="/skills/logo.png"
             alt="SusBot Logo"
@@ -45,24 +45,25 @@ export const FloatingNavbar = () => {
             height={40}
             className="rounded-full"
           />
+          <p  className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 transition font-medium">Susbot.</p>
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           <Link
-            href="#home"
+            href="/"
             className="text-gray-300 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 transition font-medium"
           >
             Home
           </Link>
           <Link
-            href="#pricing"
+            href="#features"
             className="text-gray-300 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 transition font-medium"
           >
-            Pricing
+            Features
           </Link>
           <Link
-            href="#faqs"
+            href="#faq"
             className="text-gray-300 hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 transition font-medium"
           >
             FAQs

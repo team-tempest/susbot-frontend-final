@@ -326,17 +326,17 @@ export const FOOTER_DATA = [
     title: "About",
     data: [
       {
-        name: "Become Sponsor",
+        name: "Sponsor this project",
         icon: null,
         link: "https://youtube.com",
       },
       {
-        name: "Learning about me",
+        name: "Documentation",
         icon: null,
         link: "https://example.com",
       },
       {
-        name: "Contact Me",
+        name: "Contact us",
         icon: null,
         link: "mailto:contact@example.com",
       },

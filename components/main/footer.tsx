@@ -28,7 +28,9 @@ export const Footer = () => {
             </div>
           ))}
         </div>
+          <div className="h-5">
 
+          </div>
         <div className="mb-[20px] text-[15px] text-center">
           &copy; Susbot {new Date().getFullYear()} Inc. All rights reserved.
         </div>
