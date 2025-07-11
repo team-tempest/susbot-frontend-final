@@ -25,4 +25,4 @@ jobs:
         with:
           args: deploy
         env:
-          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
+          JUNO_TOKEN: nrimk-7i5iw-gbygo-y7qo2-ytp4p-h4266-6wz67-4rwd3-flmih-2vuaz-oqe
