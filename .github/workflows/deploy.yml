@@ -1,28 +1,19 @@
-name: Deploy Frontend to Juno
+name: Deploy Workflow
 
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          registry-url: "https://registry.npmjs.org"
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Deploy to Juno
-        uses: junobuild/juno-action@main
-        with:
-          args: deploy
+      - name: Deploy
+        run: |
+          your-deploy-command deploy
         env:
           JUNO_TOKEN: nrimk-7i5iw-gbygo-y7qo2-ytp4p-h4266-6wz67-4rwd3-flmih-2vuaz-oqe
