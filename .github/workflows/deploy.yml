@@ -14,6 +14,6 @@ jobs:
 
       - name: Deploy
         run: |
-          your-deploy-command deploy
+          npm run dev
         env:
           JUNO_TOKEN: nrimk-7i5iw-gbygo-y7qo2-ytp4p-h4266-6wz67-4rwd3-flmih-2vuaz-oqe
