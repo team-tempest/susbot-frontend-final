@@ -1,5 +1,5 @@
 {
-  "name": "space-portfolio",
+  "name": "Susbot",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -9,22 +9,21 @@
     "lint": "next lint"
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "tempest org",
+    "email": "",
+    "url": "https://github.com/brianali-codes"
   },
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
+  "description": "susbot's official page.",
   "keywords": [
     "reactjs",
     "nextjs",
     "vercel",
     "react",
-    "space-portfolio",
-    "portfolio",
+    "ai",
+    "bot",
     "react-icons",
     "cn",
     "clsx",
-    "3d-portfolio",
     "3d-website",
     "sonner",
     "framer-motion",
@@ -43,26 +42,27 @@
     "typescript",
     "eslint",
     "html",
-    "css"
+    "css",
+    "web3"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/space-portfolioit"
+    "url": "https://github.com/orgs/team-tempest"
   },
-  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
+  "homepage":"https://github.com/orgs/team-tempest",
   "bugs": {
-    "url": "https://github.com/sanidhyy/space-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "",
+    "email": ""
   },
   "funding": [
     {
       "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
+      "url": ""
     },
     {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
+      "type": "",
+      "url": ""
     }
   ],
   "dependencies": {
