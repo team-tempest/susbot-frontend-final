@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Identity Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .logout-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .authenticated {
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+            color: #3c763d;
+        }
+        .not-authenticated {
+            background-color: #f2dede;
+            border-color: #ebccd1;
+            color: #a94442;
+        }
+    </style>
+</head>
+<body>
+    <h1>Internet Identity Test</h1>
+    
+    <div id="status" class="status not-authenticated">
+        Status: Not authenticated
+    </div>
+    
+    <div id="principal-info" style="display: none;">
+        <strong>Principal:</strong> <span id="principal"></span>
+    </div>
+    
+    <button id="login-btn" class="login-btn">Login with Internet Identity</button>
+    <button id="logout-btn" class="logout-btn" style="display: none;">Logout</button>
+    
+    <h2>Instructions:</h2>
+    <ol>
+        <li>Make sure dfx is running: <code>dfx start --background</code></li>
+        <li>Make sure Internet Identity is deployed: <code>dfx deps deploy</code></li>
+        <li>Click "Login with Internet Identity" to test authentication</li>
+        <li>If successful, you should see your principal displayed</li>
+    </ol>
+    
+    <h2>Expected URLs:</h2>
+    <ul>
+        <li>Internet Identity: <a href="http://rdmx6-jaaaa-aaaaa-aaadq-cai.localhost:4943" target="_blank">http://rdmx6-jaaaa-aaaaa-aaadq-cai.localhost:4943</a></li>
+        <li>SusBot Backend: <a href="http://uxrrr-q7777-77774-qaaaq-cai.localhost:4943" target="_blank">http://uxrrr-q7777-77774-qaaaq-cai.localhost:4943</a></li>
+    </ul>
+
+    <script type="module">
+        import { AuthClient } from '@dfinity/auth-client';
+        
+        let authClient;
+        
+        async function init() {
+            authClient = await AuthClient.create();
+            updateUI();
+        }
+        
+        async function updateUI() {
+            const isAuthenticated = await authClient.isAuthenticated();
+            const statusEl = document.getElementById('status');
+            const principalInfoEl = document.getElementById('principal-info');
+            const loginBtn = document.getElementById('login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            
+            if (isAuthenticated) {
+                const identity = authClient.getIdentity();
+                const principal = identity.getPrincipal().toString();
+                
+                statusEl.textContent = 'Status: Authenticated ✅';
+                statusEl.className = 'status authenticated';
+                
+                document.getElementById('principal').textContent = principal;
+                principalInfoEl.style.display = 'block';
+                
+                loginBtn.style.display = 'none';
+                logoutBtn.style.display = 'inline-block';
+            } else {
+                statusEl.textContent = 'Status: Not authenticated ❌';
+                statusEl.className = 'status not-authenticated';
+                
+                principalInfoEl.style.display = 'none';
+                
+                loginBtn.style.display = 'inline-block';
+                logoutBtn.style.display = 'none';
+            }
+        }
+        
+        document.getElementById('login-btn').addEventListener('click', async () => {
+            try {
+                await authClient.login({
+                    identityProvider: 'http://rdmx6-jaaaa-aaaaa-aaadq-cai.localhost:4943/#authorize',
+                    onSuccess: () => {
+                        console.log('Login successful!');
+                        updateUI();
+                    },
+                    onError: (error) => {
+                        console.error('Login failed:', error);
+                        alert('Login failed: ' + error);
+                    }
+                });
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Login error: ' + error);
+            }
+        });
+        
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await authClient.logout();
+            updateUI();
+        });
+        
+        // Initialize when page loads
+        init();
+    </script>
+</body>
+</html> 
