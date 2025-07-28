@@ -10,12 +10,12 @@ const CallToAction = () => {
        
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden rounded-inherit">
           <DarkVeil
-            hueShift={300}
+            hueShift={330}
             noiseIntensity={0.02}
             scanlineIntensity={0.1}
             scanlineFrequency={80.0}
-            warpAmount={0.03}
-            speed={0.4}
+            warpAmount={0.05}
+            speed={0.3}
             resolutionScale={1}
           />
         </div>
