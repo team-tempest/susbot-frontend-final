@@ -13,37 +13,37 @@ const cardData = [
     color: "#060010",
     title: "Real-Time Risk Scanning",
     description: "Analyze any Web3 address instantly for scam flags, malicious interactions, and risk scoring.",
-    label: "Insights",
+    label: "Security",
   },
   {
     color: "#060010",
-    title: "Dashboard",
-    description: "Centralized data view",
-    label: "Overview",
+    title: "AI-Powered Threat Detection",
+    description: "Leverages AI heuristics and anomaly detection to identify suspicious behaviors before it's too late.",
+    label: "Intelligence",
   },
   {
     color: "#060010",
-    title: "Collaboration",
-    description: "Work together seamlessly",
-    label: "Teamwork",
+    title: "Detailed Security Reports",
+    description: "Get comprehensive breakdowns with risk scores, threat categories, transaction history, and contract details.",
+    label: "Analytics",
   },
   {
     color: "#060010",
-    title: "Automation",
-    description: "Streamline workflows",
-    label: "Efficiency",
-  },
-  {
-    color: "#060010",
-    title: "Integration",
-    description: "Connect favorite tools",
-    label: "Connectivity",
-  },
-  {
-    color: "#060010",
-    title: "Security",
-    description: "Enterprise-grade protection",
+    title: "Blacklist Integration",
+    description: "Automatically flags addresses interacting with known scam, phishing, or dark pool contracts.",
     label: "Protection",
+  },
+  {
+    color: "#060010",
+    title: "Multi-Chain Support",
+    description: "Compatible with Ethereum, BNB Smart Chain, Polygon, Arbitrum, and more (with additional chains coming).",
+    label: "Compatibility",
+  },
+  {
+    color: "#060010",
+    title: "Contract Metadata Lookup",
+    description: "Fetch verified contract info, owner status, age, transaction count, and linked apps for any address.",
+    label: "Discovery",
   },
 ];
 
@@ -491,7 +491,7 @@ const GlobalSpotlight = ({
 
 const BentoCardGrid = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 max-w-[54rem] select-none relative"
+    className="bento-section grid gap-4 p-6 max-w-[70rem] select-none relative"
     style={{ fontSize: "clamp(1rem, 0.9rem + 0.5vw, 1.5rem)" }}
     ref={gridRef}
   >
@@ -655,7 +655,7 @@ const MagicBento = ({
             
             .card-responsive .card {
               width: 100%;
-              min-height: 260px;
+              min-height: 320px;
             }
           }
         `}
@@ -672,9 +672,9 @@ const MagicBento = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-2">
+        <div className="card-responsive grid gap-4">
           {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${enableBorderGlow ? "card--border-glow" : ""
+            const baseClassName = `card flex flex-col justify-between relative aspect-[4/3] min-h-[280px] w-full max-w-full p-7 rounded-[20px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${enableBorderGlow ? "card--border-glow" : ""
               }`;
 
             const cardStyle = {
@@ -701,16 +701,16 @@ const MagicBento = ({
                   enableMagnetism={enableMagnetism}
                 >
                   <div className="card__header flex justify-between gap-3 relative text-white">
-                    <span className="card__label text-base">{card.label}</span>
+                    <span className="card__label text-lg font-medium">{card.label}</span>
                   </div>
                   <div className="card__content flex flex-col relative text-white">
                     <h3
-                      className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? "text-clamp-1" : ""}`}
+                      className={`card__title font-semibold text-xl m-0 mb-2 ${textAutoHide ? "text-clamp-1" : ""}`}
                     >
                       {card.title}
                     </h3>
                     <p
-                      className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
+                      className={`card__description text-sm leading-6 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
                     >
                       {card.description}
                     </p>
@@ -835,16 +835,16 @@ const MagicBento = ({
                 }}
               >
                 <div className="card__header flex justify-between gap-3 relative text-white">
-                  <span className="card__label text-base">{card.label}</span>
+                  <span className="card__label text-lg font-medium">{card.label}</span>
                 </div>
                 <div className="card__content flex flex-col relative text-white">
                   <h3
-                    className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? "text-clamp-1" : ""}`}
+                    className={`card__title font-semibold text-xl m-0 mb-2 ${textAutoHide ? "text-clamp-1" : ""}`}
                   >
                     {card.title}
                   </h3>
                   <p
-                    className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
+                    className={`card__description text-sm leading-6 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}
                   >
                     {card.description}
                   </p>
@@ -859,45 +859,3 @@ const MagicBento = ({
 };
 
 export default MagicBento;
-
-{/*
-
-
-
-{
-    title: "Real-Time Risk Scanning",
-    description:
-      "Analyze any Web3 address instantly for scam flags, malicious interactions, and risk scoring.",
-    icon: ShieldCheckIcon,
-  },
-  {
-    title: "AI-Powered Threat Detection",
-    description:
-      "Leverages AI heuristics and anomaly detection to identify suspicious behaviors before it's too late.",
-    icon: BoltIcon,
-  },
-  {
-    title: "Detailed Security Reports",
-    description:
-      "Get comprehensive breakdowns with risk scores, threat categories, transaction history, and contract details.",
-    icon: ChartBarIcon,
-  },
-  {
-    title: "Blacklist Integration",
-    description:
-      "Automatically flags addresses interacting with known scam, phishing, or dark pool contracts.",
-    icon: ExclamationTriangleIcon,
-  },
-  {
-    title: "Multi-Chain Support",
-    description:
-      "Compatible with Ethereum, BNB Smart Chain, Polygon, Arbitrum, and more (with additional chains coming).",
-    icon: GlobeAltIcon,
-  },
-  {
-    title: "Contract Metadata Lookup",
-    description:
-      "Fetch verified contract info, owner status, age, transaction count, and linked apps for any address.",
-    icon: CubeTransparentIcon,
-  },
-*/}
