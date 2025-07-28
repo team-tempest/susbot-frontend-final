@@ -50,7 +50,7 @@
     "type": "git",
     "url": "https://github.com/orgs/team-tempest"
   },
-  "homepage":"https://github.com/orgs/team-tempest",
+  "homepage": "https://github.com/orgs/team-tempest",
   "bugs": {
     "url": "",
     "email": ""
@@ -71,7 +71,9 @@
     "@react-three/fiber": "^8.15.13",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.12",
+    "gsap": "^3.13.0",
     "next": "14.2.15",
+    "ogl": "^1.0.11",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",

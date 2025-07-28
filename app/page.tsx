@@ -3,8 +3,8 @@ import { Skills } from "@/components/main/skills";
 import {  SecurityDashboardSection } from "@/components/main/scan";
 import { FAQSection } from "@/components/main/faq";
 import { HowItWorksSection } from "@/components/main/hiw";
-import { FeaturesSection } from "@/components/main/features";
-
+import CallToAction from "@/components/main/cta";
+import Features from "@/components/main/features";
 
 export default function Home() {
   return (
@@ -13,10 +13,12 @@ export default function Home() {
         <Hero />
         <SecurityDashboardSection/>
         <HowItWorksSection/>
-        <FeaturesSection/>
+        <Features/>
         <Skills />
-        <FAQSection/>    
+        <FAQSection/>  
+        <CallToAction/>  
       </div>
     </main>
   );
 }
+
