@@ -36,15 +36,6 @@ export const SecurityDashboardSection = () => {
 
   return (
     <div className="relative flex flex-col w-full">
-      {/* Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        className="rotate-180 absolute left-0 w-full h-full object-cover -z-20 scale-60"
-      >
-        <source src="/videos/encryption-bg.webm" type="video/webm" />
-      </video>
 
       {/* Scanner */}
       <section className="w-full flex justify-center items-center py-32 px-6 bg-transparent min-h-[70vh]">
